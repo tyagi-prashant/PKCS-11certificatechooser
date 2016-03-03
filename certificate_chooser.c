@@ -22,6 +22,7 @@ certificate_chooser (GtkWidget *widget,
   gtk_file_filter_add_pattern(filefilter,"*.pem");
   gtk_file_filter_add_pattern(filefilter,"*.crt");
   gtk_file_filter_add_pattern(filefilter,"*.key");
+  gtk_file_filter_add_pattern(filefilter,"*.p12");
   GtkFileChooser *chooser = GTK_FILE_CHOOSER (dialog);
   gtk_file_chooser_add_filter(chooser, filefilter); 
  
