@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <errno.h>
+#include "certificate_chooser.h"
 #include "certificate_renderer.c"
 
 static void
@@ -34,7 +35,7 @@ certificate_chooser (GtkWidget *widget,
   gtk_file_filter_add_pattern(filefilter,"*.p7b");
   gtk_file_filter_add_pattern(filefilter,"*.p7c");
   gtk_file_filter_add_pattern(filefilter,"*.p12");
-  GtkFileChooser *chooser = GTK_FILE_CHOOSER (dialog);
+  chooser = GTK_FILE_CHOOSER (dialog);
   gtk_file_chooser_add_filter(chooser, filefilter); 
  
   res = gtk_dialog_run (GTK_DIALOG (dialog));
