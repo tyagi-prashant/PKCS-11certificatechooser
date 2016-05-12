@@ -1,0 +1,1 @@
+GtkFileChooser *chooser;
