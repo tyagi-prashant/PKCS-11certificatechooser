@@ -3,7 +3,7 @@ update_preview_cb(GtkFileChooser *chooser, gpointer data)
 {
     GtkWidget *certificate;
     char *filename;
-    gboolean *is_filename;
+    gboolean is_filename;
 
     filename = gtk_file_chooser_get_preview_filename (chooser);
     is_filename = (filename != NULL);
@@ -34,6 +34,7 @@ loaded_certificate (const gchar *path)
 	gsize n_data;
 	GBytes *bytes;
 	GtkWidget *dialog;
+        certificate = gcr_viewer_widget_new();
     GFile *file;
     file = g_file_new_for_path(path);
 
