@@ -25,10 +25,14 @@ certificate_chooser (GtkWidget *widget,
                                       GTK_RESPONSE_ACCEPT,
                                       NULL);
   GtkFileFilter *filefilter = gtk_file_filter_new();
-  gtk_file_filter_set_name(filefilter,"PEM certificates(*.pem,*.crt,*.key");
+  gtk_file_filter_set_name(filefilter,"X.509 Certificate Format");
   gtk_file_filter_add_pattern(filefilter,"*.pem");
   gtk_file_filter_add_pattern(filefilter,"*.crt");
-  gtk_file_filter_add_pattern(filefilter,"*.key");
+  gtk_file_filter_add_pattern(filefilter,"*.cer");
+  gtk_file_filter_add_pattern(filefilter,"*.der");
+  gtk_file_filter_add_pattern(filefilter,"*.crt");
+  gtk_file_filter_add_pattern(filefilter,"*.p7b");
+  gtk_file_filter_add_pattern(filefilter,"*.p7c");
   gtk_file_filter_add_pattern(filefilter,"*.p12");
   GtkFileChooser *chooser = GTK_FILE_CHOOSER (dialog);
   gtk_file_chooser_add_filter(chooser, filefilter); 
